@@ -228,42 +228,116 @@
         if (name === 'products') { renderAdminProducts(); updatePublishNote(); }
     }
 
-    /* ---------------- список товаров ---------------- */
+    /* ---------------- список товаров (по разделам) ---------------- */
+    var adminFilter = 'all';
+    var collapsedGroups = {};
+    var CAT_ORDER = ['entrance', 'interior', 'mirror', 'hardware'];
+    var SUBCAT_ORDER = {
+        entrance: ['entrance-flat', 'entrance-house'],
+        interior: ['', 'hidden'],
+        mirror: [''],
+        hardware: ['']
+    };
+
+    function rowHtml(p) {
+        var src = p.image
+            ? (localStorage.getItem('photo_' + p.image) || ('images/products/' + p.image + '.jpg'))
+            : null;
+        var thumb = src
+            ? '<img src="' + src + '" alt="" loading="lazy">'
+            : '<span class="admin-row-emoji">' + (p.icon || '🚪') + '</span>';
+        var sub = [p.brand || '', (p.specs && p.specs[0]) || ''].filter(Boolean).join(' · ');
+        return '<div class="admin-row">' +
+            '<div class="admin-row-photo">' + thumb + '</div>' +
+            '<div class="admin-row-main">' +
+                '<div class="admin-row-title">' + esc(p.title) + '</div>' +
+                '<div class="admin-row-sub">' + esc(sub) + '</div>' +
+            '</div>' +
+            '<div class="admin-row-price">' + money(p.price) + '</div>' +
+            '<div class="admin-row-actions">' +
+                '<button type="button" class="btn btn-secondary" onclick="editProduct(' + p.id + ')">Изменить</button>' +
+            '</div>' +
+        '</div>';
+    }
+
+    function renderAdminChips() {
+        var box = $('adminChips');
+        if (!box) return;
+        var counts = {};
+        (products || []).forEach(function (p) { counts[p.category] = (counts[p.category] || 0) + 1; });
+        var chips = [['all', 'Все', (products || []).length]];
+        CAT_ORDER.forEach(function (c) { chips.push([c, categoryLabel(c), counts[c] || 0]); });
+        box.innerHTML = chips.map(function (c) {
+            return '<button type="button" class="admin-chip' + (adminFilter === c[0] ? ' active' : '') +
+                '" onclick="setAdminFilter(\'' + c[0] + '\')">' + esc(c[1]) +
+                ' <span>' + c[2] + '</span></button>';
+        }).join('');
+    }
+
+    function setAdminFilter(cat) {
+        adminFilter = cat;
+        renderAdminProducts();
+    }
+
+    function toggleAdminGroup(cat) {
+        collapsedGroups[cat] = !collapsedGroups[cat];
+        renderAdminProducts();
+    }
+
     function renderAdminProducts() {
         var box = $('adminProducts');
         if (!box) return;
+
+        renderAdminChips();
+
         var q = ($('adminSearch') && $('adminSearch').value || '').trim().toLowerCase();
         var list = (products || []).filter(function (p) {
+            if (adminFilter !== 'all' && p.category !== adminFilter) return false;
             if (!q) return true;
             return (p.title || '').toLowerCase().indexOf(q) >= 0 ||
-                   (p.brand || '').toLowerCase().indexOf(q) >= 0;
+                   (p.brand || '').toLowerCase().indexOf(q) >= 0 ||
+                   ((p.specs || []).join(' ')).toLowerCase().indexOf(q) >= 0;
         });
 
         if (!list.length) {
-            box.innerHTML = '<p class="admin-empty">Пока ничего не найдено</p>';
+            box.innerHTML = '<p class="admin-empty">Ничего не найдено</p>';
             return;
         }
 
-        box.innerHTML = list.map(function (p) {
-            var src = p.image
-                ? (localStorage.getItem('photo_' + p.image) || ('images/products/' + p.image + '.jpg'))
-                : null;
-            var thumb = src
-                ? '<img src="' + src + '" alt="" loading="lazy">'
-                : '<span class="admin-row-emoji">' + (p.icon || '🚪') + '</span>';
-            return '<div class="admin-row">' +
-                '<div class="admin-row-photo">' + thumb + '</div>' +
-                '<div class="admin-row-main">' +
-                    '<div class="admin-row-title">' + esc(p.title) + '</div>' +
-                    '<div class="admin-row-sub">' + esc(p.brand || categoryLabel(p.category)) +
-                        (p.subcat ? ' · ' + esc(subcategoryLabel(p.subcat)) : '') + '</div>' +
-                '</div>' +
-                '<div class="admin-row-price">' + money(p.price) + '</div>' +
-                '<div class="admin-row-actions">' +
-                    '<button type="button" class="btn btn-secondary" onclick="editProduct(' + p.id + ')">Изменить</button>' +
-                '</div>' +
-            '</div>';
-        }).join('');
+        var html = '';
+        CAT_ORDER.forEach(function (cat) {
+            var items = list.filter(function (p) { return p.category === cat; });
+            if (!items.length) return;
+
+            var isCollapsed = !!collapsedGroups[cat];
+            html += '<div class="admin-group' + (isCollapsed ? ' is-collapsed' : '') + '">';
+            html += '<button type="button" class="admin-group-head" onclick="toggleAdminGroup(\'' + cat + '\')">' +
+                        '<span class="admin-group-arrow">▾</span>' +
+                        '<span class="admin-group-name">' + esc(categoryLabel(cat)) + '</span>' +
+                        '<span class="admin-group-count">' + items.length + '</span>' +
+                    '</button>';
+            html += '<div class="admin-group-body">';
+
+            var order = (SUBCAT_ORDER[cat] || ['']).slice();
+            items.forEach(function (p) {
+                var s = p.subcat || '';
+                if (order.indexOf(s) < 0) order.push(s);
+            });
+
+            order.forEach(function (sub) {
+                var group = items.filter(function (p) { return (p.subcat || '') === sub; });
+                if (!group.length) return;
+                if (sub) {
+                    html += '<div class="admin-subgroup-head">' + esc(subcategoryLabel(sub)) +
+                            ' <span>' + group.length + '</span></div>';
+                }
+                html += group.map(rowHtml).join('');
+            });
+
+            html += '</div></div>';
+        });
+
+        box.innerHTML = html;
     }
 
     /* ---------------- редактор ---------------- */
@@ -306,7 +380,7 @@
         f.pfId.value = p ? p.id : '';
         f.pfTitle.value = p ? (p.title || '') : '';
         f.pfBrand.value = p ? (p.brand || '') : '';
-        f.pfCategory.value = p ? (p.category || 'entrance') : 'entrance';
+        f.pfCategory.value = p ? (p.category || 'entrance') : (adminFilter !== 'all' ? adminFilter : 'entrance');
         syncSubcats();
         f.pfSubcat.value = p && p.subcat ? p.subcat : '';
         f.pfNoPrice.checked = p ? (typeof p.price !== 'number') : false;
@@ -429,6 +503,8 @@
 
     window.adminTab = adminTab;
     window.renderAdminProducts = renderAdminProducts;
+    window.setAdminFilter = setAdminFilter;
+    window.toggleAdminGroup = toggleAdminGroup;
     window.editProduct = editProduct;
     window.closeEditor = closeEditor;
     window.saveProduct = saveProduct;

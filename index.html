@@ -2107,7 +2107,86 @@
             font-family: inherit;
         }
 
-        .admin-list { display: flex; flex-direction: column; gap: 8px; }
+        .admin-list { display: block; }
+
+        .admin-chips {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+        .admin-chip {
+            border: 1px solid var(--line);
+            background: var(--white);
+            border-radius: 999px;
+            padding: 7px 14px;
+            font-size: 13px;
+            color: var(--green-dark);
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .admin-chip span {
+            color: var(--gray);
+            font-size: 12px;
+            margin-left: 4px;
+        }
+        .admin-chip.active {
+            background: var(--green-dark);
+            border-color: var(--green-dark);
+            color: #fff;
+        }
+        .admin-chip.active span { color: rgba(255, 255, 255, 0.75); }
+
+        .admin-group { margin-bottom: 22px; }
+        .admin-group-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 6px 0;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--green-dark);
+            text-align: left;
+        }
+        .admin-group-name { flex: 0 1 auto; }
+        .admin-group-count {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 1px 9px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray);
+        }
+        .admin-group-arrow {
+            font-size: 12px;
+            color: var(--gray);
+            transition: transform 0.2s;
+        }
+        .admin-group.is-collapsed .admin-group-arrow { transform: rotate(-90deg); }
+        .admin-group.is-collapsed .admin-group-body { display: none; }
+        .admin-subgroup-head {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 12px 0 8px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--brown);
+            font-weight: 600;
+        }
+        .admin-subgroup-head span {
+            color: var(--gray);
+            letter-spacing: 0;
+            font-weight: 400;
+        }
+        .admin-group-body .admin-row + .admin-row { margin-top: 8px; }
         .admin-row {
             display: flex;
             align-items: center;
@@ -3110,6 +3189,8 @@
 
             <div class="admin-pane" id="pane-products">
                 <div class="admin-note" id="adminPublishNote">Правки увидит все посетители после публикации.</div>
+
+                <div class="admin-chips" id="adminChips"></div>
 
                 <div class="admin-toolbar">
                     <input type="search" id="adminSearch" placeholder="Найти дверь по названию" oninput="renderAdminProducts()">
