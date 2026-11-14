@@ -2022,6 +2022,234 @@
             .cta-phone { text-align: center; }
         }
 
+        /* ===== админка ===== */
+        .btn-danger {
+            background: #B3261E;
+            color: #fff;
+        }
+        .btn-danger:hover { background: #8F1D17; }
+
+        .admin-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+        .admin-tab {
+            border: 1px solid var(--line);
+            background: var(--white);
+            color: var(--green-dark);
+            border-radius: 999px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .admin-tab.active {
+            background: var(--green-dark);
+            color: #fff;
+            border-color: var(--green-dark);
+        }
+        .admin-note {
+            background: #FFF7E0;
+            border: 1px solid #F0E0B0;
+            border-radius: 10px;
+            padding: 10px 14px;
+            font-size: 14px;
+            margin-bottom: 16px;
+            color: #6B5518;
+        }
+        .admin-note.is-ok {
+            background: #EAF6EA;
+            border-color: #C6E4C6;
+            color: #2C5C2F;
+        }
+        .admin-note.is-warn {
+            background: #FFF7E0;
+            border-color: #F0E0B0;
+            color: #6B5518;
+        }
+        .admin-status {
+            font-size: 14px;
+            min-height: 20px;
+            margin: 6px 0 10px;
+            color: var(--gray);
+        }
+        .admin-status.is-ok { color: #2E7D32; }
+        .admin-status.is-err { color: #B3261E; }
+        .admin-log {
+            font-size: 12px;
+            color: var(--gray);
+            white-space: pre-wrap;
+            max-height: 160px;
+            overflow: auto;
+            margin-top: 10px;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 8px;
+        }
+        .admin-toolbar {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+        .admin-toolbar input[type="search"] {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px 14px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: var(--white);
+            color: var(--text);
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        .admin-list { display: flex; flex-direction: column; gap: 8px; }
+        .admin-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 10px 14px;
+        }
+        .admin-row-photo {
+            width: 54px;
+            height: 72px;
+            flex: 0 0 54px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .admin-row-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .admin-row-emoji { font-size: 22px; }
+        .admin-row-main { flex: 1; min-width: 0; }
+        .admin-row-title {
+            font-weight: 700;
+            color: var(--green-dark);
+            font-size: 15px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .admin-row-sub {
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: 2px;
+        }
+        .admin-row-price {
+            font-weight: 700;
+            color: var(--bordeaux);
+            white-space: nowrap;
+            font-size: 14px;
+        }
+        .admin-row-actions { flex: 0 0 auto; }
+        .admin-row-actions .btn {
+            padding: 8px 14px;
+            font-size: 13px;
+            background: transparent;
+            color: var(--brown);
+            border: 1px solid var(--brown);
+        }
+        .admin-row-actions .btn:hover {
+            background: var(--brown);
+            color: #fff;
+        }
+        .admin-empty { color: var(--gray); font-size: 14px; }
+
+        .admin-editor {
+            margin-top: 20px;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+        }
+        .admin-editor h3 { color: var(--green-dark); margin-bottom: 14px; font-size: 18px; }
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+        .admin-field {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-size: 13px;
+            color: var(--gray);
+        }
+        .admin-field-wide { grid-column: 1 / -1; }
+        .admin-field input[type="text"],
+        .admin-field input[type="password"],
+        .admin-field select,
+        .admin-field textarea {
+            padding: 9px 12px;
+            border-radius: 9px;
+            border: 1px solid var(--line);
+            background: #fff;
+            color: var(--text);
+            font-size: 14px;
+            font-family: inherit;
+        }
+        .admin-field textarea { resize: vertical; }
+        .admin-check span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding-top: 22px;
+        }
+        .admin-photo-row {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .admin-photo-preview {
+            width: 90px;
+            height: 120px;
+            border-radius: 10px;
+            background: var(--surface);
+            border: 1px dashed var(--line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--gray);
+            overflow: hidden;
+            flex: 0 0 90px;
+        }
+        .admin-photo-preview img { width: 100%; height: 100%; object-fit: contain; background: #fff; }
+        .admin-photo-actions { display: flex; flex-direction: column; gap: 8px; }
+        .admin-hint { font-size: 12px; color: var(--gray); }
+        .admin-editor-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+        .admin-editor-actions .btn-secondary {
+            color: var(--brown);
+            border-color: var(--brown);
+        }
+
+        @media (max-width: 600px) {
+            .admin-row { flex-wrap: wrap; }
+            .admin-row-actions { width: 100%; }
+            .admin-row-actions .btn { width: 100%; }
+        }
+
         /* Отзывы */
         .reviews {
             background: var(--surface);
@@ -2870,39 +3098,152 @@
     <!-- Admin Panel -->
     <div class="admin-panel" id="adminPanel" role="dialog" aria-modal="true" aria-labelledby="adminTitle" aria-hidden="true">
         <div class="admin-header">
-            <h2 id="adminTitle">🔐 Панель управления</h2>
+            <h2 id="adminTitle">Панель управления</h2>
             <button class="btn btn-secondary" onclick="closeAdmin()" style="color: white; border-color: white;">Закрыть</button>
         </div>
         <div class="admin-content">
-            <div class="admin-stats">
-                <div class="stat-card">
-                    <div class="stat-value" id="statOrders">0</div>
-                    <div class="stat-label">Всего заявок</div>
+            <div class="admin-tabs">
+                <button type="button" class="admin-tab active" data-tab="products" onclick="adminTab('products')">Двери и цены</button>
+                <button type="button" class="admin-tab" data-tab="orders" onclick="adminTab('orders')">Заявки</button>
+                <button type="button" class="admin-tab" data-tab="settings" onclick="adminTab('settings')">Публикация</button>
+            </div>
+
+            <div class="admin-pane" id="pane-products">
+                <div class="admin-note" id="adminPublishNote">Правки увидит все посетители после публикации.</div>
+
+                <div class="admin-toolbar">
+                    <input type="search" id="adminSearch" placeholder="Найти дверь по названию" oninput="renderAdminProducts()">
+                    <button type="button" class="btn btn-primary" onclick="editProduct(null)">+ Добавить дверь</button>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-value" id="statNew">0</div>
-                    <div class="stat-label">Новых</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value" id="statProgress">0</div>
-                    <div class="stat-label">В работе</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value" id="statDone">0</div>
-                    <div class="stat-label">Выполнено</div>
+
+                <div class="admin-list" id="adminProducts"></div>
+
+                <div class="admin-editor" id="adminEditor" style="display:none;">
+                    <h3 id="adminEditorTitle">Новая дверь</h3>
+                    <form id="productForm" onsubmit="saveProduct(event)">
+                        <input type="hidden" name="pfId" value="">
+
+                        <div class="admin-photo-row">
+                            <div class="admin-photo-preview" id="pfPreview">фото</div>
+                            <div class="admin-photo-actions">
+                                <label class="btn btn-secondary" style="cursor:pointer;">
+                                    Загрузить фото
+                                    <input type="file" id="pfPhoto" accept="image/*" style="display:none;" onchange="onPhotoPick(event)">
+                                </label>
+                                <span class="admin-hint">Фотографируйте дверь вертикально, лучше на светлом фоне</span>
+                            </div>
+                        </div>
+
+                        <div class="admin-grid">
+                            <label class="admin-field admin-field-wide">
+                                <span>Название</span>
+                                <input type="text" name="pfTitle" required placeholder="Например: Арктика Роял вуд">
+                            </label>
+                            <label class="admin-field">
+                                <span>Производитель</span>
+                                <input type="text" name="pfBrand" placeholder="SV Doors">
+                            </label>
+                            <label class="admin-field">
+                                <span>Раздел</span>
+                                <select name="pfCategory" id="pfCategory" onchange="syncSubcats()">
+                                    <option value="entrance">Входные двери</option>
+                                    <option value="interior">Межкомнатные</option>
+                                    <option value="mirror">Зеркала</option>
+                                    <option value="hardware">Фурнитура</option>
+                                </select>
+                            </label>
+                            <label class="admin-field">
+                                <span>Подраздел</span>
+                                <select name="pfSubcat" id="pfSubcat">
+                                    <option value="">—</option>
+                                </select>
+                            </label>
+                            <label class="admin-field">
+                                <span>Цена, ₽</span>
+                                <input type="text" name="pfPrice" id="pfPrice" inputmode="numeric" placeholder="30000">
+                            </label>
+                            <label class="admin-field admin-check">
+                                <span><input type="checkbox" name="pfNoPrice" id="pfNoPrice" onchange="togglePrice()"> Цена по запросу</span>
+                            </label>
+                            <label class="admin-field">
+                                <span>Плашка</span>
+                                <select name="pfBadge">
+                                    <option value="">нет</option>
+                                    <option value="Хит">Хит</option>
+                                    <option value="Новинка">Новинка</option>
+                                    <option value="Выгодно">Выгодно</option>
+                                    <option value="Под заказ">Под заказ</option>
+                                </select>
+                            </label>
+                            <label class="admin-field">
+                                <span>Характеристика 1</span>
+                                <input type="text" name="pfSpec1" placeholder="Полотно 100 мм">
+                            </label>
+                            <label class="admin-field">
+                                <span>Характеристика 2</span>
+                                <input type="text" name="pfSpec2" placeholder="Букле коричневый">
+                            </label>
+                            <label class="admin-field admin-field-wide">
+                                <span>Описание в карточке</span>
+                                <textarea name="pfDesc" rows="3" placeholder="Замки, уплотнители, размер и т.д."></textarea>
+                            </label>
+                        </div>
+
+                        <div class="admin-editor-actions">
+                            <button type="submit" class="btn btn-primary btn-bordeaux">Сохранить</button>
+                            <button type="button" class="btn btn-secondary" onclick="closeEditor()">Отмена</button>
+                            <button type="button" class="btn btn-danger" id="pfDelete" style="display:none;" onclick="deleteCurrent()">Удалить</button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
-            <div class="admin-section">
-                <h3>Заявки на замер</h3>
-                <div class="order-list" id="ordersList">
-                    <!-- Orders will be inserted here -->
+            <div class="admin-pane" id="pane-orders" style="display:none;">
+                <div class="admin-stats">
+                    <div class="stat-card"><div class="stat-value" id="statOrders">0</div><div class="stat-label">Всего заявок</div></div>
+                    <div class="stat-card"><div class="stat-value" id="statNew">0</div><div class="stat-label">Новых</div></div>
+                    <div class="stat-card"><div class="stat-value" id="statProgress">0</div><div class="stat-label">В работе</div></div>
+                    <div class="stat-card"><div class="stat-value" id="statDone">0</div><div class="stat-label">Выполнено</div></div>
+                </div>
+                <div class="admin-section">
+                    <div class="order-list" id="ordersList"></div>
                 </div>
             </div>
 
-            <div class="admin-section">
-                <h3>Управление товарами</h3>
-                <button class="btn btn-primary" onclick="addNewProduct()">+ Добавить товар</button>
+            <div class="admin-pane" id="pane-settings" style="display:none;">
+                <div class="admin-note">
+                    Чтобы правки видели все посетители, панель публикует каталог в репозиторий сайта на GitHub.
+                    Токен хранится только в вашем браузере и в код сайта не попадает.
+                </div>
+                <div class="admin-grid">
+                    <label class="admin-field">
+                        <span>Владелец репозитория</span>
+                        <input type="text" id="cfgOwner" placeholder="itkrasikov-bit">
+                    </label>
+                    <label class="admin-field">
+                        <span>Репозиторий</span>
+                        <input type="text" id="cfgRepo" placeholder="dvernoi-trend">
+                    </label>
+                    <label class="admin-field">
+                        <span>Ветка</span>
+                        <input type="text" id="cfgBranch" placeholder="main">
+                    </label>
+                    <label class="admin-field admin-field-wide">
+                        <span>Токен GitHub (fine-grained, права Contents: Read and write)</span>
+                        <input type="password" id="cfgToken" placeholder="github_pat_...">
+                    </label>
+                    <label class="admin-field">
+                        <span>Пароль в админку</span>
+                        <input type="password" id="cfgPass" placeholder="новый пароль">
+                    </label>
+                </div>
+                <div class="admin-editor-actions">
+                    <button type="button" class="btn btn-primary" onclick="saveGhSettings()">Сохранить настройки</button>
+                    <button type="button" class="btn btn-secondary" onclick="checkGh()">Проверить доступ</button>
+                    <button type="button" class="btn btn-secondary" onclick="changeAdminPass()">Сменить пароль</button>
+                </div>
+                <div class="admin-status" id="ghStatus"></div>
+                <pre class="admin-log" id="adminLog"></pre>
             </div>
         </div>
     </div>
@@ -2924,7 +3265,23 @@
         };
 
         // Data
-        const products = [
+        // Каталог живёт в data/products.json — его правит панель управления.
+        async function loadCatalog() {
+            let list = null;
+            try {
+                const res = await fetch('data/products.json', { cache: 'no-store' });
+                if (res.ok) list = await res.json();
+            } catch (e) { /* file:// или оффлайн — берём встроенную копию */ }
+            if (!Array.isArray(list) || !list.length) list = FALLBACK_PRODUCTS;
+            try {
+                const ov = JSON.parse(localStorage.getItem('productsOverlay') || 'null');
+                if (Array.isArray(ov) && ov.length) list = ov;
+            } catch (e) {}
+            products = list;
+            if (typeof renderProducts === 'function') renderProducts();
+            if (typeof renderAdminProducts === 'function') renderAdminProducts();
+        }
+        let products = [
             {
             "id": 1,
             "title": "Арктика Роял вуд",
@@ -3870,6 +4227,7 @@
             "icon": "🔩"
             }
             ];
+        const FALLBACK_PRODUCTS = products;
 
         const blogPosts = [
             {
@@ -3913,6 +4271,7 @@
             renderBlog();
             renderReviews();
             updateAdminStats();
+            loadCatalog();
         });
 
         // Navigation
@@ -4107,8 +4466,11 @@
             const brand = product.brand ? product.brand : categoryLabel(product.category);
             const specs = (product.specs || []).slice(0, 2)
                 .map(s => `<span class="product-spec">${s}</span>`).join('');
-            const media = product.image
-                ? `<img src="images/products/${product.image}.jpg" alt="${product.title}" loading="lazy" width="800" height="1067">`
+            const photoSrc = product.image
+                ? (localStorage.getItem('photo_' + product.image) || ('images/products/' + product.image + '.jpg'))
+                : null;
+            const media = photoSrc
+                ? `<img src="${photoSrc}" alt="${product.title}" loading="lazy" width="800" height="1067">`
                 : `<div class="product-empty"><div class="product-emoji">${product.icon || ''}</div><span>Фото по запросу</span></div>`;
 
             card.innerHTML = `
@@ -4615,35 +4977,6 @@ case 'review':
             }
         }
 
-        function addNewProduct() {
-            const title = prompt('Название товара:');
-            if (!title) return;
-
-            const price = prompt('Цена:');
-            const category = prompt('Категория (entrance/interior/mirror/hardware):');
-            const subcat = prompt('Подкатегория (для входных: entrance-flat / entrance-house):');
-
-            const newProduct = {
-                id: Date.now(),
-                title: title,
-                category: category || 'entrance',
-                subcat: subcat || null,
-                type: 'standard',
-                price: parseInt(price) || 0,
-                specs: { width: 'Стандарт', thickness: '-', material: '-' },
-                badge: 'Новинка'
-            };
-
-            products.push(newProduct);
-
-            const customProducts = JSON.parse(localStorage.getItem('customProducts')) || [];
-            customProducts.push(newProduct);
-            localStorage.setItem('customProducts', JSON.stringify(customProducts));
-
-            renderProducts();
-            alert('Товар добавлен!');
-        }
-
         // Close modal on outside click
         window.onclick = function(event) {
             const modal = document.getElementById('modal');
@@ -4794,5 +5127,6 @@ case 'review':
         update();
     })();
     </script>
+    <script src="admin.js"></script>
 </body>
 </html>
