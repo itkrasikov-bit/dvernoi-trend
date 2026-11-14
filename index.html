@@ -2329,6 +2329,26 @@
             .admin-row-actions .btn { width: 100%; }
         }
 
+        /* кнопка админки в мобильной шапке */
+        .mobile-admin {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            border: 1px solid var(--line);
+            background: var(--white);
+            color: var(--brown);
+            font-size: 18px;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: 8px;
+        }
+        @media (max-width: 992px) {
+            .mobile-admin { display: flex; }
+        }
+
         /* Отзывы */
         .reviews {
             background: var(--surface);
@@ -2482,6 +2502,8 @@
                     </div>
                 </a>
                 
+                <button type="button" class="mobile-admin" onclick="openAdmin()" aria-label="Панель управления" title="Панель управления">&#128274;</button>
+
                 <button type="button" class="mobile-menu" onclick="toggleMenu()" aria-label="Открыть меню" aria-expanded="false" aria-controls="mainNav">
                     <span></span>
                     <span></span>
