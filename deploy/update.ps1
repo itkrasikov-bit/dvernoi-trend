@@ -7,6 +7,16 @@ $AppDir = 'C:\dverni'
 $Tmp = Join-Path $env:TEMP 'dverni-update'
 $Zip = Join-Path $env:TEMP 'dverni-update.zip'
 
+# Node could have been installed after this shell started - make sure it is on PATH
+$nodeDir = 'C:\Program Files\nodejs'
+if ((Test-Path $nodeDir) -and -not (Get-Command npm -ErrorAction SilentlyContinue)) {
+    $env:Path = $nodeDir + ';' + [System.Environment]::GetEnvironmentVariable('Path', 'Machine') + ';' + $env:Path
+}
+if (-not (Get-Command npm -ErrorAction SilentlyContinue)) {
+    throw 'npm not found. Install Node.js 22 first (see deploy/install-on-vps.ps1)'
+}
+Write-Host ('Node: ' + (& node --version) + ', npm: ' + (& npm --version))
+
 Write-Host '1/5 Downloading latest code...'
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 if (Test-Path $Tmp) { Remove-Item $Tmp -Recurse -Force }
