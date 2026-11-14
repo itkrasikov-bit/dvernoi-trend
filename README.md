@@ -29,6 +29,9 @@ node scripts/seed.mjs
 # 4. разработка / прод
 pnpm dev        # http://localhost:3000
 pnpm build && pnpm start
+
+# 5. проверка, что админка действительно закрыта
+pnpm smoke      # http://127.0.0.1:3000 по умолчанию
 ```
 
 Требуется **Node.js 22.5+** (проверено на 24).
