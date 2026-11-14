@@ -1,13 +1,12 @@
-# Установка сайта «Дверной тренд» на Windows VPS.
-# Запускается на сервере в PowerShell от администратора ПОСЛЕ того, как в C:\dverni лежат файлы проекта.
-# Пример: powershell -ExecutionPolicy Bypass -File C:\dverni\deploy\install-on-vps.ps1
+# Install the "Dvernoi Trend" site on a Windows VPS.
+# Run in PowerShell as Administrator after the project files are copied to C:\dverni.
+# ASCII only: Windows PowerShell 5.1 misreads UTF-8 without BOM.
 
 $ErrorActionPreference = 'Stop'
 $AppDir = 'C:\dverni'
 $Port = 80
-$NodeMsi = Join-Path $env:TEMP 'node-v22.msi'
 
-Write-Host '1/6 Проверяю Node.js...' -ForegroundColor Cyan
+Write-Host '1/6 Checking Node.js...'
 $nodeOk = $false
 try {
     $version = (& node --version) 2>$null
@@ -15,40 +14,39 @@ try {
 } catch { }
 
 if (-not $nodeOk) {
-    Write-Host '   Ставлю Node.js 22 LTS...'
-    Invoke-WebRequest 'https://nodejs.org/dist/v22.14.0/node-v22.14.0-x64.msi' -OutFile $NodeMsi
-    Start-Process msiexec.exe -ArgumentList "/i `"$NodeMsi`" /qn /norestart" -Wait
-    $env:Path = [System.Environment]::GetEnvironmentVariable('Path', 'Machine')
-    Write-Host ('   Node: ' + (& node --version))
+    Write-Host '    Installing Node.js 22 LTS...'
+    $msi = Join-Path $env:TEMP 'node-v22.msi'
+    Invoke-WebRequest 'https://nodejs.org/dist/v22.14.0/node-v22.14.0-x64.msi' -OutFile $msi
+    Start-Process msiexec.exe -ArgumentList "/i `"$msi`" /qn /norestart" -Wait
+    $env:Path = [System.Environment]::GetEnvironmentVariable('Path', 'Machine') + ';' + $env:Path
+    Write-Host ('    Node: ' + (& node --version))
 }
 
-Write-Host '2/6 Проверяю файлы проекта...' -ForegroundColor Cyan
+Write-Host '2/6 Checking project files...'
 if (-not (Test-Path (Join-Path $AppDir 'package.json'))) {
-    throw "Нет файлов проекта в $AppDir — сначала скопируйте их туда."
+    throw "No project files in $AppDir"
 }
 
-Write-Host '3/6 Ставлю зависимости...' -ForegroundColor Cyan
+Write-Host '3/6 Installing dependencies...'
 Push-Location $AppDir
 & npm install --no-audit --no-fund
-if ($LASTEXITCODE -ne 0) { throw 'npm install завершился с ошибкой' }
+if ($LASTEXITCODE -ne 0) { throw 'npm install failed' }
 
-Write-Host '4/6 Собираю проект...' -ForegroundColor Cyan
+Write-Host '4/6 Building...'
 & npm run build
-if ($LASTEXITCODE -ne 0) { throw 'Сборка завершилась с ошибкой' }
+if ($LASTEXITCODE -ne 0) { throw 'npm run build failed' }
 
-Write-Host '5/6 Готовлю файл окружения...' -ForegroundColor Cyan
+Write-Host '5/6 Preparing env file...'
 $envFile = Join-Path $AppDir '.env.local'
 if (-not (Test-Path $envFile)) {
     $secret = -join ((48..57) + (65..90) + (97..122) | Get-Random -Count 48 | ForEach-Object { [char]$_ })
-    @"
-ADMIN_PASSWORD=admin123
-AUTH_SECRET=$secret
-SITE_URL=http://212.193.15.46
-"@ | Out-File -FilePath $envFile -Encoding utf8
-    Write-Host '   Создан .env.local — ОБЯЗАТЕЛЬНО смените административный пароль.' -ForegroundColor Yellow
+    "ADMIN_PASSWORD=admin123" | Out-File -FilePath $envFile -Encoding ascii
+    "AUTH_SECRET=$secret" | Out-File -FilePath $envFile -Encoding ascii -Append
+    "SITE_URL=http://212.193.15.46" | Out-File -FilePath $envFile -Encoding ascii -Append
+    Write-Host '    .env.local created. CHANGE the admin password!' -ForegroundColor Yellow
 }
 
-Write-Host '6/6 Настраиваю автозапуск и брандмауэр...' -ForegroundColor Cyan
+Write-Host '6/6 Configuring autostart and firewall...'
 $nodeExe = (Get-Command node).Source
 $nextBin = Join-Path $AppDir 'node_modules\next\dist\bin\next'
 
@@ -72,8 +70,7 @@ Start-Sleep -Seconds 8
 Write-Host ''
 try {
     $response = Invoke-WebRequest "http://127.0.0.1:$Port/" -UseBasicParsing -TimeoutSec 20
-    Write-Host ('Готово: сайт отвечает ' + $response.StatusCode + ' на порту ' + $Port) -ForegroundColor Green
-    Write-Host 'Открывайте: http://212.193.15.46'
+    Write-Host ('OK: site responds ' + $response.StatusCode + ' on port ' + $Port) -ForegroundColor Green
 } catch {
-    Write-Host 'Сайт не ответил. Проверьте задачу: Get-ScheduledTaskInfo -TaskName DvernoiTrend' -ForegroundColor Red
+    Write-Host 'Site did not respond. Check: Get-ScheduledTaskInfo -TaskName DvernoiTrend' -ForegroundColor Red
 }
