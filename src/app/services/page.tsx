@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const SERVICES = [
   {
     title: 'Замер проёма',
-    price: 'бесплатно по Краснодару',
+    price: 'Краснодар и край',
     text: 'Выезжаем на объект, проверяем геометрию проёма и толщину стены, предлагаем модели под размер и бюджет. По итогам — точная смета с монтажом.',
   },
   {
@@ -73,8 +73,8 @@ export default function ServicesPage() {
         <div>
           <h2 className="text-[30px] text-white">Вызвать замерщика</h2>
           <p className="mt-3 text-sm leading-relaxed text-white/70">
-            Приедем в удобное время, измерим проём и предложим 2–3 варианта под бюджет. Замер бесплатный
-            по Краснодару.
+            Приедем в удобное время, измерим проём и предложим 2–3 варианта под бюджет. Замер делаем
+            до покупки, чтобы дверь точно встала в проём.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <LeadButton className="btn btn-light" type="measure">

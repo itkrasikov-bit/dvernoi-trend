@@ -114,7 +114,7 @@ export default function HomePage() {
             </div>
             <div className="absolute -left-4 top-8 hidden rounded-2xl bg-paper px-4 py-3 shadow-card sm:block">
               <p className="text-[11px] uppercase tracking-[0.14em] text-muted">Замер</p>
-              <p className="text-sm font-semibold text-forest">бесплатно по городу</p>
+              <p className="text-sm font-semibold text-forest">на объекте, до покупки</p>
             </div>
           </div>
         </div>
