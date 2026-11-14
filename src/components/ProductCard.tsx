@@ -25,7 +25,14 @@ export function ProductCard({ product, priority }: Props) {
             priority={priority}
           />
         ) : (
-          <div className="flex h-full items-center justify-center text-4xl text-sand">🚪</div>
+          <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-[radial-gradient(circle_at_50%_25%,#F2EDE2,transparent_65%)]">
+            <svg viewBox="0 0 48 48" className="h-14 w-14 text-sand" fill="none">
+              <rect x="9" y="6" width="30" height="36" rx="4" stroke="currentColor" strokeWidth="1.6" />
+              <path d="M9 15h30" stroke="currentColor" strokeWidth="1.2" opacity="0.6" />
+              <circle cx="32" cy="27" r="1.6" fill="currentColor" />
+            </svg>
+            <span className="text-[10px] uppercase tracking-[0.16em] text-muted">Фото по запросу</span>
+          </div>
         )}
 
         {product.badge && (
