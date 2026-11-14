@@ -10,6 +10,7 @@
     var OVERLAY_KEY = 'productsOverlay';
     var pendingPhoto = null;   // dataURL выбранного файла
     var pendingSlug = null;    // слаг фото текущей редактируемой карточки
+    var photoPending = false;  // фото ещё обрабатывается
     var currentId = null;
 
     function $(id) { return document.getElementById(id); }
@@ -179,16 +180,22 @@
         }
     }
 
-    async function publish(message) {
-        if (pendingPhoto && pendingSlug) {
+    async function publish(photo, slug, message) {
+        if (photo && slug) {
             if (ghReady()) {
                 setStatus('adminPublishNote', 'Загружаю фото…', '');
-                await ghPut('images/products/' + pendingSlug + '.jpg', pendingPhoto.split(',')[1], 'Фото: ' + pendingSlug);
-                localStorage.removeItem('photo_' + pendingSlug);
+                try {
+                    await ghPut('images/products/' + slug + '.jpg', photo.split(',')[1], 'Фото: ' + slug);
+                    localStorage.removeItem('photo_' + slug);
+                    log('Фото загружено: images/products/' + slug + '.jpg');
+                } catch (err) {
+                    setStatus('adminPublishNote', 'Фото не загрузилось: ' + err.message, 'err');
+                    log('Ошибка загрузки фото: ' + err.message);
+                    return false;
+                }
             } else {
-                try { localStorage.setItem('photo_' + pendingSlug, pendingPhoto); } catch (e) { log('Фото не сохранилось локально: ' + e.message); }
+                try { localStorage.setItem('photo_' + slug, photo); } catch (e) { log('Фото не сохранилось локально: ' + e.message); }
             }
-            pendingPhoto = null;
         }
 
         if (!ghReady()) {
@@ -414,6 +421,7 @@
     function onPhotoPick(e) {
         var file = e.target.files && e.target.files[0];
         if (!file) return;
+        photoPending = true;
         var reader = new FileReader();
         reader.onload = function () {
             var img = new Image();
@@ -429,9 +437,12 @@
                 ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
                 pendingPhoto = canvas.toDataURL('image/jpeg', 0.85);
                 setPreview(pendingPhoto);
+                photoPending = false;
             };
+            img.onerror = function () { photoPending = false; };
             img.src = reader.result;
         };
+        reader.onerror = function () { photoPending = false; };
         reader.readAsDataURL(file);
     }
 
@@ -440,6 +451,13 @@
         var f = e.target;
         var title = (f.pfTitle.value || '').trim();
         if (!title) return;
+
+        // если фото ещё сжимается — подождать, иначе оно потеряется
+        var waited = 0;
+        while (photoPending && waited < 4000) {
+            await new Promise(function (r) { setTimeout(r, 100); });
+            waited += 100;
+        }
 
         var id = currentId || Date.now();
         var slug = pendingSlug || translit(title) || ('door-' + id);
@@ -458,7 +476,8 @@
         };
         if (!product.image) delete product.image;
 
-        pendingSlug = product.image ? slug : null;
+        var photo = pendingPhoto;
+        var photoSlug = product.image ? slug : null;
 
         var idx = (products || []).findIndex(function (x) { return x.id === id; });
         if (idx >= 0) products[idx] = Object.assign({}, products[idx], product);
@@ -468,7 +487,7 @@
         renderAdminProducts();
         closeEditor();
 
-        await publish((idx >= 0 ? 'Правка товара: ' : 'Новый товар: ') + title);
+        await publish(photo, photoSlug, (idx >= 0 ? 'Правка товара: ' : 'Новый товар: ') + title);
     }
 
     function deleteProduct(id) {
@@ -478,7 +497,7 @@
         products = products.filter(function (x) { return x.id !== id; });
         if (typeof renderProducts === 'function') renderProducts();
         renderAdminProducts();
-        publish('Удалён товар: ' + p.title);
+        publish(null, null, 'Удалён товар: ' + p.title);
     }
 
     function deleteCurrent() {
