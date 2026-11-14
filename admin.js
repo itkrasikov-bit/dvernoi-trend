@@ -14,7 +14,6 @@
     var currentId = null;
 
     function $(id) { return document.getElementById(id); }
-
     function esc(s) {
         return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
             return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
@@ -68,6 +67,24 @@
         localStorage.setItem(GH_KEY, JSON.stringify(cfg));
         setStatus('ghStatus', cfg.token ? 'Настройки сохранены. Можно публиковать.' : 'Настройки сохранены, но токен пустой — правки останутся локальными.', cfg.token ? 'ok' : 'warn');
         updatePublishNote();
+
+        // если уже были локальные правки — сразу публикуем их
+        if (ghReady()) {
+            var pending = null;
+            try { pending = JSON.parse(localStorage.getItem(OVERLAY_KEY) || 'null'); } catch (e) {}
+            if (Array.isArray(pending) && pending.length) {
+                (async function () {
+                    setStatus('ghStatus', 'Настройки сохранены. Публикую правки, сделанные до настройки…', '');
+                    var ok = await publish(null, null, 'Публикация каталога из админки');
+                    if (ok) {
+                        setStatus('ghStatus', 'Готово: правки на сайте, обновится за 1–2 минуты.', 'ok');
+                        adminTab('products');
+                    } else {
+                        setStatus('ghStatus', 'Не удалось опубликовать. Проверьте токен и права Contents: Read and write.', 'err');
+                    }
+                })();
+            }
+        }
     }
 
     function setStatus(id, text, kind) {
@@ -172,10 +189,11 @@
         var note = $('adminPublishNote');
         if (!note) return;
         if (ghReady()) {
-            note.textContent = 'Публикация настроена: изменения сразу уйдут на сайт (обновится за 1–2 минуты).';
+            note.textContent = 'Публикация настроена: каждое сохранение сразу уходит на сайт (обновится за 1–2 минуты).';
             note.className = 'admin-note is-ok';
         } else {
-            note.textContent = 'Публикация не настроена — правки видите только вы. Откройте вкладку «Публикация».';
+            note.innerHTML = 'Публикация не настроена — правки видите только вы. ' +
+                '<button type="button" class="admin-link" onclick="adminTab(\'settings\')">Вставить токен и публиковать</button>';
             note.className = 'admin-note is-warn';
         }
     }
@@ -200,9 +218,19 @@
 
         if (!ghReady()) {
             var ok = localOverlaySet(products);
-            setStatus('adminPublishNote', ok
-                ? 'Сохранено в этом браузере. Чтобы видели все — настройте публикацию.'
-                : 'Не хватило места в браузере: удалите старые фото или настройте публикацию.', ok ? 'warn' : 'err');
+            if (!ok) {
+                setStatus('adminPublishNote', 'Не хватило места в браузере — настройте публикацию.', 'err');
+                return false;
+            }
+            setStatus('adminPublishNote', 'Правка сохранена у вас в браузере. Вставьте токен — опубликую сразу.', 'warn');
+            // один раз за сессию подсказываем, где включить публикацию
+            if (!sessionStorage.getItem('ghPromptShown')) {
+                sessionStorage.setItem('ghPromptShown', '1');
+                adminTab('settings');
+                setStatus('ghStatus', 'Вставьте токен и нажмите «Сохранить настройки» — правка сразу уйдёт на сайт.', 'warn');
+                var tokenField = $('cfgToken');
+                if (tokenField) tokenField.focus();
+            }
             return false;
         }
 
