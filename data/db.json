@@ -1,0 +1,1432 @@
+{
+  "categories": [
+    {
+      "slug": "entrance",
+      "title": "Входные двери",
+      "parent": null,
+      "sort": 1
+    },
+    {
+      "slug": "entrance-flat",
+      "title": "Для квартиры",
+      "parent": "entrance",
+      "sort": 1
+    },
+    {
+      "slug": "entrance-house",
+      "title": "Для частного дома",
+      "parent": "entrance",
+      "sort": 2
+    },
+    {
+      "slug": "interior",
+      "title": "Межкомнатные двери",
+      "parent": null,
+      "sort": 2
+    },
+    {
+      "slug": "hidden",
+      "title": "Скрытого монтажа",
+      "parent": "interior",
+      "sort": 1
+    },
+    {
+      "slug": "mirror",
+      "title": "Зеркала",
+      "parent": null,
+      "sort": 3
+    },
+    {
+      "slug": "hardware",
+      "title": "Фурнитура",
+      "parent": null,
+      "sort": 4
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "slug": "arktika-royal-vud",
+      "title": "Арктика Роял вуд",
+      "brand": "SV Doors",
+      "price": 30000,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-flat",
+      "badge": "Хит",
+      "specs": [
+        "Полотно 100 мм",
+        "Букле коричневый / МДФ Роял вуд"
+      ],
+      "description": "Замки Гардиан 4 класса взломостойкости, 3 контура уплотнения, противосъёмные ригели 2 шт по 12 мм, петли 3 шт с открыванием 180°, закрытый утеплённый короб. Размер по коробу 860/960×2050 мм.",
+      "image": "/media/products/arktika-royal-vud.jpg",
+      "gallery": [
+        "/media/products/arktika-royal-vud.jpg"
+      ],
+      "isActive": true,
+      "sort": 10,
+      "createdAt": "2026-11-14T16:55:17.796Z"
+    },
+    {
+      "id": 2,
+      "slug": "arktika-venge",
+      "title": "Арктика Венге",
+      "brand": "SV Doors",
+      "price": 30000,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-flat",
+      "badge": null,
+      "specs": [
+        "Полотно 100 мм",
+        "Букле коричневый / венге"
+      ],
+      "description": "Внутренняя панель МДФ 16 мм «венге», утеплитель — минеральная плита, замки цилиндровый и сувальдный Гардиан, глазок расширенного обзора, эксцентрик.",
+      "image": "/media/products/arktika-venge.jpg",
+      "gallery": [
+        "/media/products/arktika-venge.jpg"
+      ],
+      "isActive": true,
+      "sort": 20,
+      "createdAt": "2026-11-14T16:55:17.799Z"
+    },
+    {
+      "id": 3,
+      "slug": "spec",
+      "title": "Спец",
+      "brand": "SV Doors",
+      "price": 14500,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-flat",
+      "badge": "Выгодно",
+      "specs": [
+        "Полотно 50 мм",
+        "Антивандальное покрытие"
+      ],
+      "description": "Бюджетная модель для квартиры: ХДФ внутри, утеплитель — ячеистая целлюлоза, 1 контур уплотнения, цилиндровый замок, петли на опорном подшипнике.",
+      "image": "/media/products/spec.jpg",
+      "gallery": [
+        "/media/products/spec.jpg"
+      ],
+      "isActive": true,
+      "sort": 30,
+      "createdAt": "2026-11-14T16:55:17.800Z"
+    },
+    {
+      "id": 4,
+      "slug": "profi-mm",
+      "title": "Профи М/М",
+      "brand": "SV Doors",
+      "price": null,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-flat",
+      "badge": null,
+      "specs": [
+        "Полотно 50 мм",
+        "Медный антик"
+      ],
+      "description": "Покрытие «медный антик» снаружи и внутри, замок Просам 3В4-31, противосъёмные ригели 2 шт по 12 мм, петли 2 шт с открыванием 180°, ручка на планке. Цена по запросу.",
+      "image": "/media/products/profi-mm.jpg",
+      "gallery": [
+        "/media/products/profi-mm.jpg"
+      ],
+      "isActive": true,
+      "sort": 40,
+      "createdAt": "2026-11-14T16:55:17.800Z"
+    },
+    {
+      "id": 5,
+      "slug": "sidney",
+      "title": "Сидней",
+      "brand": "SV Doors",
+      "price": 30650,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-flat",
+      "badge": null,
+      "specs": [
+        "Полотно 80 мм",
+        "Шагрель: чёрная снаружи / белая внутри"
+      ],
+      "description": "Замки цилиндровый и сувальдный Гардиан 4 класса, 3 ригеля по 12 мм, 2 контура уплотнения, глазок, эксцентрик, ручка хром.",
+      "image": "/media/products/sidney.jpg",
+      "gallery": [
+        "/media/products/sidney.jpg"
+      ],
+      "isActive": true,
+      "sort": 50,
+      "createdAt": "2026-11-14T16:55:17.801Z"
+    },
+    {
+      "id": 6,
+      "slug": "braun",
+      "title": "Браун",
+      "brand": "SV Doors",
+      "price": null,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-flat",
+      "badge": "Новинка",
+      "specs": [
+        "Полотно 110 мм",
+        "Форте турин, шоколадный"
+      ],
+      "description": "Замки Гардиан 4 класса, наличник 80 мм, ночная задвижка, эксцентрик, 3 ригеля, закрытый утеплённый короб. Цена по запросу.",
+      "image": "/media/products/braun.jpg",
+      "gallery": [
+        "/media/products/braun.jpg"
+      ],
+      "isActive": true,
+      "sort": 60,
+      "createdAt": "2026-11-14T16:55:17.801Z"
+    },
+    {
+      "id": 7,
+      "slug": "impress",
+      "title": "Импресс",
+      "brand": "Impress",
+      "price": 64500,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-flat",
+      "badge": null,
+      "specs": [
+        "Полотно 110 мм",
+        "Магнезит + лакобель золото"
+      ],
+      "description": "Зеркало Crystal Delux с чёрной окантовкой, 3 контура уплотнения (2 шлегель + магнитный), петли «капля» с открыванием 180°, замки Гардиан 4 класса, наличник 100 мм, ночная задвижка.",
+      "image": "/media/products/impress.jpg",
+      "gallery": [
+        "/media/products/impress.jpg"
+      ],
+      "isActive": true,
+      "sort": 70,
+      "createdAt": "2026-11-14T16:55:17.802Z"
+    },
+    {
+      "id": 8,
+      "slug": "modena-oreh",
+      "title": "Модена Орех",
+      "brand": "Эверест",
+      "price": 55300,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-flat",
+      "badge": null,
+      "specs": [
+        "Полотно 90 мм",
+        "ПВХ грецкий орех, патина"
+      ],
+      "description": "2-контурная панель-панель с МДФ-наличниками, утеплитель — базальтовая плита, покраска «чёрный муар с блёстками», замки Гардиан 3211 и 3001, броненакладка Fuaro.",
+      "image": "/media/products/modena-oreh.jpg",
+      "gallery": [
+        "/media/products/modena-oreh.jpg"
+      ],
+      "isActive": true,
+      "sort": 80,
+      "createdAt": "2026-11-14T16:55:17.803Z"
+    },
+    {
+      "id": 9,
+      "slug": "porta-r3-8p1",
+      "title": "Porta R-3 8/П1",
+      "brand": "Эверест",
+      "price": 33000,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-flat",
+      "badge": null,
+      "specs": [
+        "Полотно 90 мм",
+        "Графит Про / Аляска"
+      ],
+      "description": "Сталь 08пс, сменная накладка 10 мм, панель 22 мм эко-шпон, теплоизоляционная панель SIP внутри полотна, 3 контура EPDM-уплотнителя.",
+      "image": "/media/products/porta-r3-8p1.jpg",
+      "gallery": [
+        "/media/products/porta-r3-8p1.jpg"
+      ],
+      "isActive": true,
+      "sort": 90,
+      "createdAt": "2026-11-14T16:55:17.803Z"
+    },
+    {
+      "id": 10,
+      "slug": "porta-r3-4p61",
+      "title": "Porta R-3 4/П61",
+      "brand": "Эверест",
+      "price": 33000,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-flat",
+      "badge": null,
+      "specs": [
+        "Полотно 93 мм",
+        "Графит Про / зеркало «Лунный камень»"
+      ],
+      "description": "Сменная панель 22 мм эко-шпон с декоративными молдингами, зеркальная вставка, панель SIP, эксцентрик, 3 контура EPDM.",
+      "image": "/media/products/porta-r3-4p61.jpg",
+      "gallery": [
+        "/media/products/porta-r3-4p61.jpg"
+      ],
+      "isActive": true,
+      "sort": 100,
+      "createdAt": "2026-11-14T16:55:17.804Z"
+    },
+    {
+      "id": 11,
+      "slug": "m629-4",
+      "title": "М629/4",
+      "brand": "Эверест",
+      "price": 69950,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-flat",
+      "badge": null,
+      "specs": [
+        "Полотно 104 мм",
+        "Дуб натуральный + стекло"
+      ],
+      "description": "Короб 126 мм, МДФ 16 мм, вставка чёрного глянцевого стекла, замки Securemme 2019 (сувальдный) и 2061 (цилиндровый), петли Combi Arialdo, размер 870/960×2050 мм.",
+      "image": "/media/products/m629-4.jpg",
+      "gallery": [
+        "/media/products/m629-4.jpg"
+      ],
+      "isActive": true,
+      "sort": 110,
+      "createdAt": "2026-11-14T16:55:17.805Z"
+    },
+    {
+      "id": 12,
+      "slug": "helga",
+      "title": "Хельга",
+      "brand": "Эверест",
+      "price": 54800,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-flat",
+      "badge": null,
+      "specs": [
+        "Полотно 90 мм",
+        "Голди Cappuccino + зеркало"
+      ],
+      "description": "3-контурная панель-панель, внутреннее зеркало 1920×460 мм, фурнитура Fuaro сатинированное золото, замки Гардиан 3211 и 3001, глазок сбоку.",
+      "image": "/media/products/helga.jpg",
+      "gallery": [
+        "/media/products/helga.jpg"
+      ],
+      "isActive": true,
+      "sort": 120,
+      "createdAt": "2026-11-14T16:55:17.806Z"
+    },
+    {
+      "id": 13,
+      "slug": "max-termo-7024",
+      "title": "MAX Термо 11 Муар 7024",
+      "brand": "Эверест",
+      "price": 81000,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-house",
+      "badge": "Хит",
+      "specs": [
+        "Полотно 103 мм",
+        "Терморазрыв, муар 7024"
+      ],
+      "description": "3-контурная металл-панель, короб закрытый утеплённый 158 мм, стеклопакет с металлической вставкой на рабочей створке, замки Гардиан Г3221 и Г3001, петли 3 шт, порог из нержавейки.",
+      "image": "/media/products/max-termo-7024.jpg",
+      "gallery": [
+        "/media/products/max-termo-7024.jpg"
+      ],
+      "isActive": true,
+      "sort": 130,
+      "createdAt": "2026-11-14T16:55:17.806Z"
+    },
+    {
+      "id": 14,
+      "slug": "max-termo-bordo",
+      "title": "MAX Термо 11 Муар Бордо",
+      "brand": "Эверест",
+      "price": 81000,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-house",
+      "badge": null,
+      "specs": [
+        "Полотно 103 мм",
+        "Терморазрыв, муар бордо"
+      ],
+      "description": "Та же конструкция, что и MAX Термо 11: 3 контура уплотнения, утеплитель — базальтовая плита и пенополистирол, фурнитура чёрная, эксцентрик.",
+      "image": "/media/products/max-termo-bordo.jpg",
+      "gallery": [
+        "/media/products/max-termo-bordo.jpg"
+      ],
+      "isActive": true,
+      "sort": 140,
+      "createdAt": "2026-11-14T16:55:17.807Z"
+    },
+    {
+      "id": 15,
+      "slug": "termo-versa-belaya",
+      "title": "Термо Versa Шагрень белая",
+      "brand": "Эверест",
+      "price": 74400,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-house",
+      "badge": null,
+      "specs": [
+        "Полотно 103 мм",
+        "Шагрень белая + цинк"
+      ],
+      "description": "3-контурная металл-панель, короб 158 мм, 4-камерный стеклопакет с бронзой, МДФ 10 мм внутри, замки Гардиан Г3011 и Г3001, 3 контура уплотнения (1 магнитный).",
+      "image": "/media/products/termo-versa-belaya.jpg",
+      "gallery": [
+        "/media/products/termo-versa-belaya.jpg"
+      ],
+      "isActive": true,
+      "sort": 150,
+      "createdAt": "2026-11-14T16:55:17.808Z"
+    },
+    {
+      "id": 16,
+      "slug": "termo-versa-bordo",
+      "title": "Термо Versa Муар Бордо",
+      "brand": "Эверест",
+      "price": 72500,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-house",
+      "badge": null,
+      "specs": [
+        "Полотно 103 мм",
+        "Муар бордо + цинк"
+      ],
+      "description": "Версия Termo Versa в цвете «муар бордо», фурнитура бронза, замки Гардиан Г3011 и Г3001, порог из нержавейки.",
+      "image": "/media/products/termo-versa-bordo.jpg",
+      "gallery": [
+        "/media/products/termo-versa-bordo.jpg"
+      ],
+      "isActive": true,
+      "sort": 160,
+      "createdAt": "2026-11-14T16:55:17.808Z"
+    },
+    {
+      "id": 17,
+      "slug": "termo-prometey",
+      "title": "Термо Прометей Серый муар",
+      "brand": "Эверест",
+      "price": 46600,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-house",
+      "badge": "Выгодно",
+      "specs": [
+        "Полотно 103 мм",
+        "Серый муар + цинк"
+      ],
+      "description": "Термо-дверь металл-панель, внутренняя панель МДФ 10 мм, короб открытый, замок Гардиан сувальдный 4 класса, независимая ночная задвижка, фурнитура хром.",
+      "image": "/media/products/termo-prometey.jpg",
+      "gallery": [
+        "/media/products/termo-prometey.jpg"
+      ],
+      "isActive": true,
+      "sort": 170,
+      "createdAt": "2026-11-14T16:55:17.809Z"
+    },
+    {
+      "id": 18,
+      "slug": "liverpool",
+      "title": "Ливерпуль",
+      "brand": "Impress",
+      "price": 87900,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-house",
+      "badge": null,
+      "specs": [
+        "Полотно 110 мм",
+        "Муар графит RAL 7024"
+      ],
+      "description": "Терморазрыв усиленный двухкамерный, короб 187 мм, тонированный стеклопакет с лазерной резкой, английская решётка, замки Гардиан 4 класса и KALE KILIT, 3 ригеля по 12 мм.",
+      "image": "/media/products/liverpool.jpg",
+      "gallery": [
+        "/media/products/liverpool.jpg"
+      ],
+      "isActive": true,
+      "sort": 180,
+      "createdAt": "2026-11-14T16:55:17.810Z"
+    },
+    {
+      "id": 19,
+      "slug": "rodeo-2",
+      "title": "Родео 2",
+      "brand": "Impress",
+      "price": 89400,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-house",
+      "badge": "Новинка",
+      "specs": [
+        "Полотно 111 мм",
+        "Муар коричневый, рейки"
+      ],
+      "description": "Цельногнутое полотно с запаянными рейками, короб П10 Термо Лайт 187 мм, петли Барк с открыванием 180°, ночная задвижка, наличник 80 мм.",
+      "image": "/media/products/rodeo-2.jpg",
+      "gallery": [
+        "/media/products/rodeo-2.jpg"
+      ],
+      "isActive": true,
+      "sort": 190,
+      "createdAt": "2026-11-14T16:55:17.810Z"
+    },
+    {
+      "id": 20,
+      "slug": "manchester",
+      "title": "Манчестер THERMO",
+      "brand": "Impress",
+      "price": 85500,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-house",
+      "badge": null,
+      "specs": [
+        "Полотно 110 мм",
+        "Муар коричневый RAL 8019"
+      ],
+      "description": "Металлические филёнки, стеклопакет бронза с лазерной резкой, терморазрыв двухкамерный, замки Гардиан 4 класса и KALE KILIT, порог из нержавейки.",
+      "image": "/media/products/manchester.jpg",
+      "gallery": [
+        "/media/products/manchester.jpg"
+      ],
+      "isActive": true,
+      "sort": 200,
+      "createdAt": "2026-11-14T16:55:17.811Z"
+    },
+    {
+      "id": 21,
+      "slug": "termo-1300",
+      "title": "Термо на заказ 1300×2200",
+      "brand": "Эверест",
+      "price": 85000,
+      "oldPrice": null,
+      "category": "entrance",
+      "subcategory": "entrance-house",
+      "badge": "Под заказ",
+      "specs": [
+        "Размер 1300×2200 мм",
+        "Полотно 103 мм"
+      ],
+      "description": "Нестандартный размер под ваш проём: панель МДФ «Дуб Беловежский» / «Софт Грей», замки Гардиан 4 класса, ночная задвижка, порог из нержавейки.",
+      "image": "/media/products/termo-1300.jpg",
+      "gallery": [
+        "/media/products/termo-1300.jpg"
+      ],
+      "isActive": true,
+      "sort": 210,
+      "createdAt": "2026-11-14T16:55:17.812Z"
+    },
+    {
+      "id": 22,
+      "slug": "emalex-r1",
+      "title": "EMALEX R1",
+      "brand": "ВФД",
+      "price": 10470,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон Эмалекс",
+        "Телескопический погонаж"
+      ],
+      "description": "Базовая модель серии в четырёх цветах: графит, белый, молочный, серый. Комплектация — телескопический погонаж.",
+      "image": "/media/products/emalex-r1.jpg",
+      "gallery": [
+        "/media/products/emalex-r1.jpg"
+      ],
+      "isActive": true,
+      "sort": 220,
+      "createdAt": "2026-11-14T16:55:17.813Z"
+    },
+    {
+      "id": 23,
+      "slug": "emalex-r1-bely",
+      "title": "EMALEX R1, стекло сатин, белый",
+      "brand": "ВФД",
+      "price": 10110,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон Эмалекс",
+        "Стекло сатин, прозрачное"
+      ],
+      "description": "Стеклянная вставка «сатин», цвет полотна белый, покрытие экошпон Эмалекс.",
+      "image": "/media/products/emalex-r1-bely.jpg",
+      "gallery": [
+        "/media/products/emalex-r1-bely.jpg"
+      ],
+      "isActive": true,
+      "sort": 230,
+      "createdAt": "2026-11-14T16:55:17.814Z"
+    },
+    {
+      "id": 24,
+      "slug": "emalex-r1-molochny",
+      "title": "EMALEX R1, стекло сатин, молочный",
+      "brand": "ВФД",
+      "price": 10110,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон Эмалекс",
+        "Стекло сатин, прозрачное"
+      ],
+      "description": "Стеклянная вставка «сатин», цвет полотна молочный.",
+      "image": "/media/products/emalex-r1-molochny.jpg",
+      "gallery": [
+        "/media/products/emalex-r1-molochny.jpg"
+      ],
+      "isActive": true,
+      "sort": 240,
+      "createdAt": "2026-11-14T16:55:17.815Z"
+    },
+    {
+      "id": 25,
+      "slug": "emalex-r1-grafit",
+      "title": "EMALEX R1, стекло сатин, графит",
+      "brand": "ВФД",
+      "price": 10810,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон Эмалекс",
+        "Стекло сатин графит"
+      ],
+      "description": "Стеклянная вставка «сатин графит», цвет полотна графит.",
+      "image": "/media/products/emalex-r1-grafit.jpg",
+      "gallery": [
+        "/media/products/emalex-r1-grafit.jpg"
+      ],
+      "isActive": true,
+      "sort": 250,
+      "createdAt": "2026-11-14T16:55:17.815Z"
+    },
+    {
+      "id": 26,
+      "slug": "e33-bely",
+      "title": "E 33, лакобель, белый",
+      "brand": "ВФД",
+      "price": 7850,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон Эмалекс",
+        "Стекло лакобель чёрный"
+      ],
+      "description": "Стеклянная вставка «лакобель чёрный», полотно белое, покрытие экошпон Эмалекс.",
+      "image": "/media/products/e33-bely.jpg",
+      "gallery": [
+        "/media/products/e33-bely.jpg"
+      ],
+      "isActive": true,
+      "sort": 260,
+      "createdAt": "2026-11-14T16:55:17.816Z"
+    },
+    {
+      "id": 27,
+      "slug": "e33-bezh",
+      "title": "E 33, лакобель, тёмно-бежевый",
+      "brand": "ВФД",
+      "price": 7850,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон Эмалекс",
+        "Стекло лакобель чёрный"
+      ],
+      "description": "Стеклянная вставка «лакобель чёрный», полотно тёмно-бежевое.",
+      "image": "/media/products/e33-bezh.jpg",
+      "gallery": [
+        "/media/products/e33-bezh.jpg"
+      ],
+      "isActive": true,
+      "sort": 270,
+      "createdAt": "2026-11-14T16:55:17.816Z"
+    },
+    {
+      "id": 28,
+      "slug": "urban-2v",
+      "title": "Урбан 2V",
+      "brand": "ВФД",
+      "price": 14060,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон Эмалекс",
+        "Кромка и молдинг золото"
+      ],
+      "description": "Тёмно-бежевое полотно, кромка 4×4 и молдинг золото.",
+      "image": "/media/products/urban-2v.jpg",
+      "gallery": [
+        "/media/products/urban-2v.jpg"
+      ],
+      "isActive": true,
+      "sort": 280,
+      "createdAt": "2026-11-14T16:55:17.817Z"
+    },
+    {
+      "id": 29,
+      "slug": "innov-02v",
+      "title": "Иннов 02В, шел муссон",
+      "brand": "ВФД",
+      "price": 16020,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон Эмалекс",
+        "Полотно с филёнкой"
+      ],
+      "description": "Цвет «шел муссон», покрытие экошпон Эмалекс.",
+      "image": "/media/products/innov-02v.jpg",
+      "gallery": [
+        "/media/products/innov-02v.jpg"
+      ],
+      "isActive": true,
+      "sort": 290,
+      "createdAt": "2026-11-14T16:55:17.818Z"
+    },
+    {
+      "id": 30,
+      "slug": "atum7-dub",
+      "title": "Атум 7, беленый дуб",
+      "brand": "ВФД",
+      "price": 4790,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": "Выгодно",
+      "specs": [
+        "Экошпон",
+        "Стекло сатин белый"
+      ],
+      "description": "Полотно с горизонтальными вставками и стеклом «сатин белый», цвет «беленый дуб».",
+      "image": "/media/products/atum7-dub.jpg",
+      "gallery": [
+        "/media/products/atum7-dub.jpg"
+      ],
+      "isActive": true,
+      "sort": 300,
+      "createdAt": "2026-11-14T16:55:17.819Z"
+    },
+    {
+      "id": 31,
+      "slug": "atum7-venge",
+      "title": "Атум 7, венге",
+      "brand": "ВФД",
+      "price": 4790,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон",
+        "Стекло сатин белый"
+      ],
+      "description": "Полотно с горизонтальными вставками и стеклом «сатин белый», цвет «венге».",
+      "image": "/media/products/atum7-venge.jpg",
+      "gallery": [
+        "/media/products/atum7-venge.jpg"
+      ],
+      "isActive": true,
+      "sort": 310,
+      "createdAt": "2026-11-14T16:55:17.820Z"
+    },
+    {
+      "id": 32,
+      "slug": "atum5",
+      "title": "Атум 5, снежный",
+      "brand": "ВФД",
+      "price": 5210,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон",
+        "Стекло лакобель чёрный"
+      ],
+      "description": "Полотно со стеклом «лакобель чёрный», цвет «снежный».",
+      "image": "/media/products/atum5.jpg",
+      "gallery": [
+        "/media/products/atum5.jpg"
+      ],
+      "isActive": true,
+      "sort": 320,
+      "createdAt": "2026-11-14T16:55:17.821Z"
+    },
+    {
+      "id": 33,
+      "slug": "urbanz-shale",
+      "title": "Урбан Z, шале пустынный",
+      "brand": "ВФД",
+      "price": 9640,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон",
+        "Фактура дерева"
+      ],
+      "description": "Цвет «шале пустынный», покрытие экошпон, полотно с продольной филёнкой.",
+      "image": "/media/products/urbanz-shale.jpg",
+      "gallery": [
+        "/media/products/urbanz-shale.jpg"
+      ],
+      "isActive": true,
+      "sort": 330,
+      "createdAt": "2026-11-14T16:55:17.821Z"
+    },
+    {
+      "id": 34,
+      "slug": "urbanz-pekan",
+      "title": "Урбан Z, пекан голд кросс",
+      "brand": "ВФД",
+      "price": 15860,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон",
+        "Фактура «ёлочка»"
+      ],
+      "description": "Цвет «пекан голд кросс» с рисунком «ёлочка», покрытие экошпон.",
+      "image": "/media/products/urbanz-pekan.jpg",
+      "gallery": [
+        "/media/products/urbanz-pekan.jpg"
+      ],
+      "isActive": true,
+      "sort": 340,
+      "createdAt": "2026-11-14T16:55:17.822Z"
+    },
+    {
+      "id": 35,
+      "slug": "katun-81002",
+      "title": "Катунь 81002, Аляска",
+      "brand": "Убертюр / Эверест",
+      "price": 16500,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон, винил",
+        "Суперматовая поверхность"
+      ],
+      "description": "Классическая филёнка, покрытие экошпон винил, цвет «Аляска суперматовая».",
+      "image": "/media/products/katun-81002.jpg",
+      "gallery": [
+        "/media/products/katun-81002.jpg"
+      ],
+      "isActive": true,
+      "sort": 350,
+      "createdAt": "2026-11-14T16:55:17.823Z"
+    },
+    {
+      "id": 36,
+      "slug": "katun-81003",
+      "title": "Катунь 81003, Эмалайт матча",
+      "brand": "Убертюр / Эверест",
+      "price": 16500,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон, винил",
+        "Матовая эмаль"
+      ],
+      "description": "Цвет «Эмалайт матча» — глубокий зелёный, классическая филёнка с золотой ручкой.",
+      "image": "/media/products/katun-81003.jpg",
+      "gallery": [
+        "/media/products/katun-81003.jpg"
+      ],
+      "isActive": true,
+      "sort": 360,
+      "createdAt": "2026-11-14T16:55:17.824Z"
+    },
+    {
+      "id": 37,
+      "slug": "trinity-titan",
+      "title": "Тринити, GVI Титан",
+      "brand": "Fly Doors",
+      "price": 11900,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон, винил",
+        "Кромка шампань"
+      ],
+      "description": "Полотно с вертикальными вставками, цвет GVI Титан, кромка «шампань».",
+      "image": "/media/products/trinity-titan.jpg",
+      "gallery": [
+        "/media/products/trinity-titan.jpg"
+      ],
+      "isActive": true,
+      "sort": 370,
+      "createdAt": "2026-11-14T16:55:17.824Z"
+    },
+    {
+      "id": 38,
+      "slug": "lastella-snezhny",
+      "title": "Lastella, ясень снежный",
+      "brand": "Fly Doors",
+      "price": 5800,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон",
+        "Горизонтальные вставки"
+      ],
+      "description": "Светлое полотно «ясень снежный» с горизонтальными вставками.",
+      "image": "/media/products/lastella-snezhny.jpg",
+      "gallery": [
+        "/media/products/lastella-snezhny.jpg"
+      ],
+      "isActive": true,
+      "sort": 380,
+      "createdAt": "2026-11-14T16:55:17.825Z"
+    },
+    {
+      "id": 39,
+      "slug": "lastella-latte",
+      "title": "Lastella, ясень латте",
+      "brand": "Fly Doors",
+      "price": 5500,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон",
+        "Стекло сатин"
+      ],
+      "description": "Цвет «ясень латте», стеклянная вставка «сатин».",
+      "image": "/media/products/lastella-latte.jpg",
+      "gallery": [
+        "/media/products/lastella-latte.jpg"
+      ],
+      "isActive": true,
+      "sort": 390,
+      "createdAt": "2026-11-14T16:55:17.826Z"
+    },
+    {
+      "id": 40,
+      "slug": "lastella-makiato",
+      "title": "Lastella, макиато",
+      "brand": "Fly Doors",
+      "price": 5900,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон",
+        "Зеркало"
+      ],
+      "description": "Цвет «макиато», зеркальная вставка.",
+      "image": "/media/products/lastella-makiato.jpg",
+      "gallery": [
+        "/media/products/lastella-makiato.jpg"
+      ],
+      "isActive": true,
+      "sort": 400,
+      "createdAt": "2026-11-14T16:55:17.827Z"
+    },
+    {
+      "id": 41,
+      "slug": "vena-platina",
+      "title": "Вена, платина",
+      "brand": "Альберо",
+      "price": 8200,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон, винил",
+        "Стекло графит"
+      ],
+      "description": "Цвет «платина», вставки из стекла «графит».",
+      "image": "/media/products/vena-platina.jpg",
+      "gallery": [
+        "/media/products/vena-platina.jpg"
+      ],
+      "isActive": true,
+      "sort": 410,
+      "createdAt": "2026-11-14T16:55:17.827Z"
+    },
+    {
+      "id": 42,
+      "slug": "keln",
+      "title": "Кельн, кипарис тёмный",
+      "brand": "Альберо",
+      "price": 6400,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон",
+        "Стекло сатин"
+      ],
+      "description": "Цвет «кипарис тёмный», стеклянная вставка «сатин».",
+      "image": "/media/products/keln.jpg",
+      "gallery": [
+        "/media/products/keln.jpg"
+      ],
+      "isActive": true,
+      "sort": 420,
+      "createdAt": "2026-11-14T16:55:17.828Z"
+    },
+    {
+      "id": 43,
+      "slug": "riga",
+      "title": "Рига, кедр серый",
+      "brand": "Альберо",
+      "price": 6400,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон",
+        "Стекло сатин"
+      ],
+      "description": "Цвет «кедр серый», стеклянная вставка «сатин».",
+      "image": "/media/products/riga.jpg",
+      "gallery": [
+        "/media/products/riga.jpg"
+      ],
+      "isActive": true,
+      "sort": 430,
+      "createdAt": "2026-11-14T16:55:17.829Z"
+    },
+    {
+      "id": 44,
+      "slug": "vena-loft",
+      "title": "Вена, лофт светлый бетон",
+      "brand": "Альберо",
+      "price": 5700,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон",
+        "Стекло графит"
+      ],
+      "description": "Фактура «лофт светлый бетон», вставки из стекла «графит».",
+      "image": "/media/products/vena-loft.jpg",
+      "gallery": [
+        "/media/products/vena-loft.jpg"
+      ],
+      "isActive": true,
+      "sort": 440,
+      "createdAt": "2026-11-14T16:55:17.829Z"
+    },
+    {
+      "id": 45,
+      "slug": "drezden",
+      "title": "Дрезден, лофт тёмный бетон",
+      "brand": "Альберо",
+      "price": 6100,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон",
+        "Стекло графит"
+      ],
+      "description": "Фактура «лофт тёмный бетон», вставки из стекла «графит».",
+      "image": "/media/products/drezden.jpg",
+      "gallery": [
+        "/media/products/drezden.jpg"
+      ],
+      "isActive": true,
+      "sort": 450,
+      "createdAt": "2026-11-14T16:55:17.830Z"
+    },
+    {
+      "id": 46,
+      "slug": "ermitazh",
+      "title": "Эрмитаж, белый",
+      "brand": "Альберо",
+      "price": 13400,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон, винил",
+        "Классическая филёнка"
+      ],
+      "description": "Белое полотно с классической двухпанельной филёнкой.",
+      "image": "/media/products/ermitazh.jpg",
+      "gallery": [
+        "/media/products/ermitazh.jpg"
+      ],
+      "isActive": true,
+      "sort": 460,
+      "createdAt": "2026-11-14T16:55:17.831Z"
+    },
+    {
+      "id": 47,
+      "slug": "prado",
+      "title": "Прадо, чёрный",
+      "brand": "Альберо",
+      "price": 11900,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": "Новинка",
+      "specs": [
+        "Экошпон, винил",
+        "Молдинг серебро"
+      ],
+      "description": "Чёрное полотно с молдингом «серебро».",
+      "image": "/media/products/prado.jpg",
+      "gallery": [
+        "/media/products/prado.jpg"
+      ],
+      "isActive": true,
+      "sort": 470,
+      "createdAt": "2026-11-14T16:55:17.831Z"
+    },
+    {
+      "id": 48,
+      "slug": "afina",
+      "title": "Афина, ваниль",
+      "brand": "Альберо",
+      "price": 14200,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон, винил",
+        "Стекло сатин"
+      ],
+      "description": "Цвет «ваниль», две стеклянные вставки «сатин».",
+      "image": "/media/products/afina.jpg",
+      "gallery": [
+        "/media/products/afina.jpg"
+      ],
+      "isActive": true,
+      "sort": 480,
+      "createdAt": "2026-11-14T16:55:17.832Z"
+    },
+    {
+      "id": 49,
+      "slug": "bogema",
+      "title": "Стиль Богема, белый",
+      "brand": "Альберо",
+      "price": 9500,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Эмаль",
+        "Классическая филёнка"
+      ],
+      "description": "Белое эмалевое полотно с классической филёнкой.",
+      "image": "/media/products/bogema.jpg",
+      "gallery": [
+        "/media/products/bogema.jpg"
+      ],
+      "isActive": true,
+      "sort": 490,
+      "createdAt": "2026-11-14T16:55:17.833Z"
+    },
+    {
+      "id": 50,
+      "slug": "trinity-silver",
+      "title": "Тринити, GVI Сильвер",
+      "brand": "Fly Doors",
+      "price": 10900,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон, винил",
+        "Кромка чёрная"
+      ],
+      "description": "Цвет GVI Сильвер, кромка чёрная, вертикальные вставки.",
+      "image": "/media/products/trinity-silver.jpg",
+      "gallery": [
+        "/media/products/trinity-silver.jpg"
+      ],
+      "isActive": true,
+      "sort": 500,
+      "createdAt": "2026-11-14T16:55:17.834Z"
+    },
+    {
+      "id": 51,
+      "slug": "fn01",
+      "title": "FN01, дуб пацифик",
+      "brand": "Fly Doors",
+      "price": 9200,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон",
+        "Кромка ABS 1 мм чёрная"
+      ],
+      "description": "Фактура «дуб пацифик» с чёрной кромкой ABS.",
+      "image": "/media/products/fn01.jpg",
+      "gallery": [
+        "/media/products/fn01.jpg"
+      ],
+      "isActive": true,
+      "sort": 510,
+      "createdAt": "2026-11-14T16:55:17.834Z"
+    },
+    {
+      "id": 52,
+      "slug": "e32-zerkalo",
+      "title": "E 32, зеркало, белый",
+      "brand": "ВФД",
+      "price": 11260,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Экошпон Эмалекс",
+        "Зеркало"
+      ],
+      "description": "Белое полотно с зеркальной вставкой, покрытие экошпон Эмалекс.",
+      "image": "/media/products/e32-zerkalo.jpg",
+      "gallery": [
+        "/media/products/e32-zerkalo.jpg"
+      ],
+      "isActive": true,
+      "sort": 520,
+      "createdAt": "2026-11-14T16:55:17.835Z"
+    },
+    {
+      "id": 53,
+      "slug": "invizible",
+      "title": "Дверь скрытого монтажа Invizible",
+      "brand": null,
+      "price": null,
+      "oldPrice": null,
+      "category": "interior",
+      "subcategory": "hidden",
+      "badge": "Под заказ",
+      "specs": [
+        "Скрытый монтаж",
+        "Полотно заподлицо"
+      ],
+      "description": "Скрытая коробка, полотно устанавливается заподлицо со стеной, под покраску в цвет интерьера. Изготовление под размер проёма.",
+      "image": "/media/products/invizible.jpg",
+      "gallery": [
+        "/media/products/invizible.jpg"
+      ],
+      "isActive": true,
+      "sort": 530,
+      "createdAt": "2026-11-14T16:55:17.836Z"
+    },
+    {
+      "id": 54,
+      "slug": "dver-54",
+      "title": "Зеркало в прихожую",
+      "brand": null,
+      "price": null,
+      "oldPrice": null,
+      "category": "mirror",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Размер по запросу",
+        "Рама под интерьер"
+      ],
+      "description": "Подбираем размер и оформление под вашу прихожую: рама в цвет фурнитуры дверей, кромка евро, крепление на скрытый подвес.",
+      "image": null,
+      "gallery": [],
+      "isActive": true,
+      "sort": 540,
+      "createdAt": "2026-11-14T16:55:17.836Z"
+    },
+    {
+      "id": 55,
+      "slug": "dver-55",
+      "title": "Зеркало в полный рост с подсветкой",
+      "brand": null,
+      "price": null,
+      "oldPrice": null,
+      "category": "mirror",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Подсветка LED",
+        "Размер по запросу"
+      ],
+      "description": "Напольное или навесное зеркало в полный рост с подсветкой и сенсорным выключателем.",
+      "image": null,
+      "gallery": [],
+      "isActive": true,
+      "sort": 550,
+      "createdAt": "2026-11-14T16:55:17.836Z"
+    },
+    {
+      "id": 56,
+      "slug": "dver-56",
+      "title": "Зеркало по индивидуальному размеру",
+      "brand": null,
+      "price": null,
+      "oldPrice": null,
+      "category": "mirror",
+      "subcategory": null,
+      "badge": "Под заказ",
+      "specs": [
+        "Любая форма",
+        "Обработка кромки"
+      ],
+      "description": "Изготовление по вашим размерам: прямая или фигурная кромка, отверстия под крепёж, матирование рисунком.",
+      "image": null,
+      "gallery": [],
+      "isActive": true,
+      "sort": 560,
+      "createdAt": "2026-11-14T16:55:17.836Z"
+    },
+    {
+      "id": 57,
+      "slug": "dver-57",
+      "title": "Ручки и петли Fuaro",
+      "brand": null,
+      "price": null,
+      "oldPrice": null,
+      "category": "hardware",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Латунь / хром",
+        "Под цвет двери"
+      ],
+      "description": "Ручки, петли и накладки Fuaro в наличии: хром, чёрный, сатинированное золото, бронза.",
+      "image": null,
+      "gallery": [],
+      "isActive": true,
+      "sort": 570,
+      "createdAt": "2026-11-14T16:55:17.836Z"
+    },
+    {
+      "id": 58,
+      "slug": "dver-58",
+      "title": "Замки Гардиан, 4 класс",
+      "brand": null,
+      "price": null,
+      "oldPrice": null,
+      "category": "hardware",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Цилиндровый / сувальдный",
+        "4 класс взломостойкости"
+      ],
+      "description": "Цилиндровые и сувальдные замки Гардиан, броненакладки, защита от высверливания и отжима.",
+      "image": null,
+      "gallery": [],
+      "isActive": true,
+      "sort": 580,
+      "createdAt": "2026-11-14T16:55:17.836Z"
+    },
+    {
+      "id": 59,
+      "slug": "dver-59",
+      "title": "Комплект фурнитуры на входную дверь",
+      "brand": null,
+      "price": null,
+      "oldPrice": null,
+      "category": "hardware",
+      "subcategory": null,
+      "badge": null,
+      "specs": [
+        "Подбор в комплект",
+        "Установка"
+      ],
+      "description": "Собираем комплект под вашу дверь: ручка, глазок, ночная задвижка, доводчик, эксцентрик. Подбор и установка.",
+      "image": null,
+      "gallery": [],
+      "isActive": true,
+      "sort": 590,
+      "createdAt": "2026-11-14T16:55:17.836Z"
+    }
+  ],
+  "leads": [
+    {
+      "id": 1,
+      "name": "Ирина",
+      "phone": "79180000000",
+      "message": "Нужна дверь 900×2100, дом из газобетона",
+      "type": "measure",
+      "productId": null,
+      "status": "new",
+      "createdAt": "2026-11-14T15:55:17.848Z"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Ольга",
+      "rating": 5,
+      "text": "Заказывали входную дверь с терморазрывом. Замерщик приехал в день обращения, помог с выбором модели под наш проём. Установили аккуратно, мусор увезли.",
+      "status": "published",
+      "createdAt": "2026-09-12T10:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Дмитрий",
+      "rating": 5,
+      "text": "Брал межкомнатные двери в экошпоне на всю квартиру. Понравилось, что сразу посчитали с наличниками и доборами, без сюрпризов в конце.",
+      "status": "published",
+      "createdAt": "2026-08-28T12:30:00.000Z"
+    },
+    {
+      "id": 3,
+      "name": "Екатерина",
+      "rating": 4,
+      "text": "Двери хорошие, доставили в срок. Немного сдвинулся монтаж из-за загрузки мастеров, но предупредили заранее и всё поставили за один день.",
+      "status": "published",
+      "createdAt": "2026-08-03T16:00:00.000Z"
+    }
+  ],
+  "settings": {}
+}

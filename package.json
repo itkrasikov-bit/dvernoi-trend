@@ -1,0 +1,33 @@
+{
+  "name": "dvernoi-trend",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Дверной тренд — каталог дверей с админкой",
+  "engines": {
+    "node": ">=22.5"
+  },
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start --port 3000",
+    "seed": "node --experimental-strip-types scripts/seed.ts",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "15.5.4",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "sharp": "0.34.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.1.13",
+    "@types/node": "24.5.2",
+    "@types/react": "19.1.13",
+    "@types/react-dom": "19.1.9",
+    "tailwindcss": "4.1.13",
+    "typescript": "5.9.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["@tailwindcss/oxide", "sharp"]
+  }
+}
