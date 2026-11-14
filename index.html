@@ -1883,6 +1883,145 @@
             grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
             gap: 24px;
         }
+        /* ===== призывы к действию ===== */
+        .cta-strip {
+            background: linear-gradient(135deg, var(--green-dark), #2A3A20);
+            color: #fff;
+            padding: 16px 0;
+        }
+        .cta-strip-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .cta-strip-text strong {
+            display: block;
+            font-size: 19px;
+            line-height: 1.25;
+        }
+        .cta-strip-text span {
+            display: block;
+            font-size: 14px;
+            opacity: 0.82;
+            margin-top: 3px;
+        }
+        .cta-strip-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .cta-strip .btn-outline {
+            border-color: rgba(255, 255, 255, 0.55);
+            color: #fff;
+        }
+        .cta-strip .btn-outline:hover {
+            background: #fff;
+            border-color: #fff;
+            color: var(--green-dark);
+        }
+        .cta-phone {
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            padding: 8px 2px;
+            white-space: nowrap;
+        }
+        .cta-phone:hover {
+            text-decoration: underline;
+        }
+
+        .catalog-cta {
+            margin-top: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            flex-wrap: wrap;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 20px 24px;
+        }
+        .catalog-cta-text strong {
+            display: block;
+            font-size: 18px;
+            color: var(--green-dark);
+        }
+        .catalog-cta-text span {
+            font-size: 14px;
+            color: var(--gray);
+        }
+        .catalog-cta-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* мобильная панель действий */
+        .mobile-cta {
+            display: none;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1200;
+            gap: 8px;
+            padding: 8px 10px calc(8px + env(safe-area-inset-bottom, 0px));
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.12);
+            transform: translateY(110%);
+            transition: transform 0.3s;
+        }
+        .mobile-cta.show {
+            transform: translateY(0);
+        }
+        .mobile-cta-btn {
+            flex: 1;
+            border: none;
+            border-radius: 10px;
+            padding: 13px 10px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        .mobile-cta-call {
+            flex: 0 0 54px;
+            background: var(--surface);
+            color: var(--green-dark);
+            font-size: 18px;
+        }
+        .mobile-cta-consult {
+            background: #fff;
+            color: var(--green-dark);
+            border: 1.5px solid var(--green-dark);
+        }
+        .mobile-cta-measure {
+            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-light));
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-cta { display: flex; }
+            body { padding-bottom: 72px; }
+            .messengers { display: none; }
+            .cta-strip-inner,
+            .catalog-cta {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .cta-strip-actions .btn,
+            .catalog-cta-actions .btn { flex: 1; }
+            .cta-phone { text-align: center; }
+        }
+
         /* Отзывы */
         .reviews {
             background: var(--surface);
@@ -2107,6 +2246,21 @@
             <div class="slider-dots" id="sliderDots"></div>
         </section>
 
+        <!-- Призыв к действию под слайдером -->
+        <section class="cta-strip" aria-label="Заявка на замер">
+            <div class="container cta-strip-inner">
+                <div class="cta-strip-text">
+                    <strong>Подберём дверь под ваш проём</strong>
+                    <span>Замер на объекте, изготовление от 3 дней, доставка и монтаж</span>
+                </div>
+                <div class="cta-strip-actions">
+                    <button class="btn btn-primary btn-bordeaux btn-lg" onclick="openModal('measure')">Вызвать замерщика</button>
+                    <button class="btn btn-outline btn-lg" onclick="openModal('consult')">Консультация</button>
+                    <a class="cta-phone" href="tel:+79183576660">8 (918) 357-66-60</a>
+                </div>
+            </div>
+        </section>
+
         <!-- Catalog Preview -->
             <section class="section" id="catalog">
                 <div class="container">
@@ -2134,6 +2288,17 @@
 
                     <div class="text-center" style="margin-top: 40px;">
                         <button class="btn btn-primary" onclick="showPage('catalog')">Смотреть весь каталог</button>
+                    </div>
+
+                    <div class="catalog-cta">
+                        <div class="catalog-cta-text">
+                            <strong>Не нашли нужную дверь?</strong>
+                            <span>Пришлите размер проёма — подберём модели и посчитаем с установкой.</span>
+                        </div>
+                        <div class="catalog-cta-actions">
+                            <button class="btn btn-primary btn-bordeaux" onclick="openModal('measure')">Вызвать замерщика</button>
+                            <button class="btn btn-outline" onclick="openModal('consult')">Написать менеджеру</button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -3819,7 +3984,7 @@
 
                 // На главной — только превью каталога, полный список на странице «Каталог»
                 if (grid.id === 'productGrid' && filter !== 'single') {
-                    filtered = filtered.slice(0, 6);
+                    filtered = filtered.slice(0, 8);
                 }
 
                 filtered.forEach(product => {
@@ -4608,6 +4773,25 @@ case 'review':
         slider.addEventListener('mouseleave', function () {
             if (window.restartSliderTimer) restartSliderTimer();
         });
+    })();
+    </script>
+
+    <div class="mobile-cta" id="mobileCta" aria-hidden="true">
+        <a class="mobile-cta-btn mobile-cta-call" href="tel:+79183576660" aria-label="Позвонить">&#128222;</a>
+        <button type="button" class="mobile-cta-btn mobile-cta-consult" onclick="openModal('consult')">Написать</button>
+        <button type="button" class="mobile-cta-btn mobile-cta-measure" onclick="openModal('measure')">Замер</button>
+    </div>
+    <script>
+    (function () {
+        var bar = document.getElementById('mobileCta');
+        if (!bar) return;
+        function update() {
+            var visible = window.scrollY > 420;
+            bar.classList.toggle('show', visible);
+            bar.setAttribute('aria-hidden', visible ? 'false' : 'true');
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
     })();
     </script>
 </body>
