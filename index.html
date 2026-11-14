@@ -1758,6 +1758,45 @@
         .hero-slide.pos-left-top img { object-position: left top; }
         .hero-slide.fit-contain img { object-fit: contain; }
 
+        .hero-caption {
+            position: absolute;
+            left: 32px;
+            bottom: 64px;
+            z-index: 4;
+            max-width: 40%;
+            background: rgba(20, 28, 16, 0.76);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            border-radius: 14px;
+            padding: 16px 22px;
+            font-size: 19px;
+            line-height: 1.35;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+        }
+
+        @media (max-width: 992px) {
+            .hero-caption {
+                left: 16px;
+                bottom: 62px;
+                max-width: 64%;
+                font-size: 16px;
+                padding: 13px 16px;
+            }
+        }
+        @media (max-width: 600px) {
+            .hero-caption {
+                left: 12px;
+                bottom: 60px;
+                max-width: 76%;
+                font-size: 13.5px;
+                padding: 10px 13px;
+                border-radius: 10px;
+            }
+        }
+
         .hero-arrow {
             position: absolute;
             top: 50%;
@@ -2556,6 +2595,7 @@
             <div class="hero-slide fit-cover pos-center-low">
                 <div class="hero-slide-bg" style="background-image: url('images/slider/slide-2.jpg')"></div>
                 <img src="images/slider/slide-2.jpg" alt="Входная дверь с терморазрывом для частного дома" width="1800" height="960" loading="lazy">
+                <div class="hero-caption">Изготовление металлических дверей нестандартных размеров</div>
             </div>
             <div class="hero-slide fit-cover pos-left-top">
                 <div class="hero-slide-bg" style="background-image: url('images/slider/slide-3.jpg')"></div>
@@ -2564,6 +2604,7 @@
             <div class="hero-slide fit-cover pos-center">
                 <div class="hero-slide-bg" style="background-image: url('images/slider/slide-4.jpg')"></div>
                 <img src="images/slider/slide-4.jpg" alt="Прихожая с дверью скрытого монтажа" width="1800" height="960" loading="lazy">
+                <div class="hero-caption">Двери скрытого монтажа нестандартных размеров</div>
             </div>
             <div class="hero-slide fit-cover pos-center-top">
                 <div class="hero-slide-bg" style="background-image: url('images/slider/slide-5.jpg')"></div>
