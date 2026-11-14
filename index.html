@@ -3943,7 +3943,7 @@
             const specs = (product.specs || []).slice(0, 2)
                 .map(s => `<span class="product-spec">${s}</span>`).join('');
             const media = product.image
-                ? `<img src="images/products/${product.image}.jpg" alt="${product.title}" loading="lazy" width="640" height="854">`
+                ? `<img src="images/products/${product.image}.jpg" alt="${product.title}" loading="lazy" width="800" height="1067">`
                 : `<div class="product-empty"><div class="product-emoji">${product.icon || ''}</div><span>Фото по запросу</span></div>`;
 
             card.innerHTML = `
