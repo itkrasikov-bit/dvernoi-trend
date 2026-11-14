@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { HeroSlider } from '@/components/HeroSlider';
 import { LeadButton } from '@/components/LeadButton';
 import { ProductCard } from '@/components/ProductCard';
 import {
@@ -53,7 +54,6 @@ export default function HomePage() {
     categoryImages[cat.slug] = items[0]?.image ?? undefined;
   }
 
-  const hero = '/media/slider/slide-2.jpg';
 
   return (
     <>
@@ -95,28 +95,7 @@ export default function HomePage() {
             </dl>
           </div>
 
-          <div className="relative">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.6rem] shadow-soft">
-              <Image
-                src={hero}
-                alt="Входная дверь с терморазрывом"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/70 to-transparent p-5 pt-16">
-                <p className="text-[11px] uppercase tracking-[0.2em] text-white/70">Нестандартные размеры</p>
-                <p className="mt-1 font-display text-xl text-white">
-                  Изготовление металлических дверей под ваш проём
-                </p>
-              </div>
-            </div>
-            <div className="absolute -left-4 top-8 hidden rounded-2xl bg-paper px-4 py-3 shadow-card sm:block">
-              <p className="text-[11px] uppercase tracking-[0.14em] text-muted">Замер</p>
-              <p className="text-sm font-semibold text-forest">на объекте, до покупки</p>
-            </div>
-          </div>
+          <HeroSlider />
         </div>
       </section>
 
